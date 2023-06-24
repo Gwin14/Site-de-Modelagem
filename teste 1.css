@@ -1,89 +1,67 @@
+:root{
+    --corfundo: #e8fbe5;
+    --corfundo01: #10110e;
+    --cortitulo: #3bd123;
+    
+    --fonteGeral: Arial, Helvetica, sans-serif;
+}
+
+
 body{
-    background-color: #09161a;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
+    background-color: var(--corfundo01);
+    font-family: var(--fonteGeral)
 }
 
 main{
-    border: 1px solid #6d3726;
-    text-align: center;
-    margin: 20px 20px;
+    max-width: 800px;
+    background-color: var(--corfundo);
     border-radius: 20px;
-    padding: 30px;
-}
-
-div{
-    width: 49%;
+    padding: 20px;
+    margin: auto;
 }
 
 h1{
-    color: aliceblue;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.295);
+    text-align: center;
+    color: var(--cortitulo);
 }
 
-main > p{
-    text-align: justify;
-    color: aliceblue;
-    text-indent: 30px;
+h2{
+    background-image: linear-gradient(90deg, var(--cortitulo), transparent);
+    padding: 5px;
+    border-radius: 10px;
 }
 
-header{
-    font-size: 1.5em;
-    background-color: transparent;
-    border: 3px solid #16333e;
-    margin: 30px;
-    padding: 10px;
-}
-
-a{
-    color: aliceblue;
-    text-decoration: none;
-    margin: 0px 40px
-}
-
-a:hover{
-    color: aliceblue;
+h3{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.295);
+    max-width: 300px;
     font-style: italic;
 }
 
-header > p{
-    text-align: center;
+ul, ol, section{
+    list-style-position: inside;
+    border-radius: 10px;
+    border: 2px solid var(--cortitulo);
+    padding: 10px;
+}
+
+li, p{
+    text-align: justify;
+    text-indent: 15px;
+    line-height: 1.5em;
 }
 
 footer{
+    background-color: var(--cortitulo);
+    font-size: 1.2em;
+    box-shadow: 0px 0px 8px var(--cortitulo);
+}
+
+footer > p{
     text-align: center;
 }
 
-button{
-    height: 60px;
-    width: 100px;
-    color: aliceblue;
-    background-color: transparent;
-    border-radius: 10px;
-    border: 1px solid #6d3726;
-    
-}
-
-.botao{
-    text-align: center;
-    width: 100%;
-}
-
-button:hover{
-    background-color: #6d3726;
-    color: #09161a;
-}
-
-.principal{
-    display: inline-block;
-}
-
-.imagem{
-    width: 50%;
-    height: 100%;
-    display: inline-block;
-}
-
-img{
-    border-radius: 10px;
-    width: 100%
+footer > p > a{
+    text-decoration: none;
+    color: var(--corfundo);
 }

@@ -8,23 +8,183 @@
     <link rel="stylesheet" href="teste 1.css">
 </head>
 <body>
-    <div>
-        <header>
-            <p><a href="#">Login</a> <a href="#">Sign Up</a></p>
-        </header>
-    </div>
-    <div class="principal">
-        <main>
-            <h1>cejon</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, repellendus ducimus. Maxime, placeat adipisci porro a, quos nisi nihil possimus ducimus repellendus, voluptatum quaerat in. Nesciunt harum quo laborum error.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae porro laudantium nulla! Hic minima, nisi enim corrupti quia pariatur magni? Nesciunt repellendus obcaecati id ad quae ab consequuntur voluptates doloribus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus consequuntur eum, exercitationem fugiat sit cumque labore magni ratione voluptas officiis sunt ex vel at perferendis praesentium est autem nihil voluptatum.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique magnam hic possimus sequi magni, nisi labore saepe exercitationem aperiam quidem vero atque iste porro! Vel laboriosam commodi perspiciatis recusandae ab?</p>
-        </main>
-        <div class="botao"><button>Sair</button></div>
-    </div>
-    <div class="imagem">
-        <img src="https://images2.alphacoders.com/238/238870.jpg" alt="montanha">
-    </div>
+    <main>
+        <h1>A3 - MODELAGEM DE SOFTWARE</h1>
+
+
+<h2>Requisitos Funcionais</h2>
+<ul>
+    <li>RF001 - O sistema deve permitir cadastrar ferramentas, contendo nome, marca e custo de aquisição das mesmas.</li>
+    <li>RF002 - O sistema deve permitir cadastrar amigos contendo, nome e telefone.</li>
+    <li>RF003 - O sistema deve mostrar o relatório de todas as ferramentas.</li>
+    <li>RF004 - O sistema deve permitir registrar o empréstimo de uma ou mais ferramentas.</li>
+    <li>RF005 - O sistema deve permitir registrar a data que ocorreu o empréstimo de ferramentas e a data de devolução.</li>
+    <li>RF006 - O sistema deve mostrar relatório de todas as ferramentas já emprestadas.</li>
+        <li>RF006.1 - O sistema deve mostrar relatório de empréstimos ativos.</li>
+        <li>RF006.2 - O sistema deve mostrar relatório de empréstimos pendentes.</li>
+    <li>RF007 - O sistema deve identificar quem fez mais empréstimos de ferramentas.</li>
+    <li>RF008 - O sistema deve permitir alertar se tem algum amigo que nunca devolveu alguma ferramenta, a cada novo empréstimo.</li>
+    <li>RF009 - O sistema deve permitir ter uma agenda integrada com o Google.</li>
+    <li>RF010 - O sistema deve registrar convites de amigos para eventos com o Google Agenda.</li>
+    <li>RF011 - O sistema deve permitir o compartilhamento de lembretes de eventos por e-mail.</li>
+</ul>
+
+
+<h2>User Story</h2>
+
+<ol>
+    <li>Como dono, eu gostaria de cadastrar ferramentas, informando o nome, marca e custo de aquisição, para manter um registro organizado.</li>
+    
+    <li>Como dono, eu gostaria de cadastrar meus amigos no software, informando seus nomes e telefones, para ter um cadastro completo e poder associar empréstimos a eles.</li>
+    
+    <li>Como dono, eu gostaria de registrar o empréstimo de uma ou mais ferramentas a um amigo específico e marcar a data de empréstimo e a data de devolução das ferramentas emprestadas, para manter controle sobre as ferramentas.</li>
+    
+    <li>Como dono, eu gostaria de obter um relatório das ferramentas cadastradas no software, juntamente com o valor total gasto em aquisições, para ter uma visão geral dos meus investimentos em ferramentas.</li>
+    
+    <li>Como dono, eu gostaria de visualizar um relatório dos empréstimos ativos e de todos os empréstimos já realizados, identificando qual amigo realizou o maior número de empréstimos e se algum amigo ainda possui ferramentas não devolvidas, para reconhecer quem mais utiliza as ferramentas emprestadas mantendo um histórico completo.</li>
+    
+    <li>Como dono, eu gostaria que o software integrasse com o Google Agenda, utilizando o cadastro de amigos existente, para registrar convites de amigos a eventos e receber lembretes por e-mail.</li>
+</ol>
+
+
+<h2>User Story - testes de aceitação </h2>
+
+
+<h3>1 - FERRAMENTA</h3>
+<section>
+    <p>
+        Cenário 1: Criação de uma nova ferramenta campos obrigatórios preenchidos:
+        Dado que estou na tela de cadastro de ferramentas
+        Quando preencho os campos de nome, marca e custo de aquisição da ferramenta
+        E clico em "Cadastrar"
+        Então a ferramenta é adicionada com sucesso ao cadastro.
+    </p>
+    
+    <p>
+        Cenário 2: Criação de uma nova ferramenta campos obrigatórios não preenchidos:
+        Dado que estou na tela de cadastro de ferramentas
+        Quando deixo algum dos campos obrigatórios em branco
+        E clico em "Cadastrar"
+        Então uma mensagem de erro é exibida informando que os campos obrigatórios devem ser preenchidos.
+    </p>
+</section>
+
+
+<h3>2 - AMIGOS</h3>
+<section>
+    <p>
+        Cenário 1: Criação de um novo amigo campos obrigatórios preenchidos:
+        Dado que estou na tela de cadastro de amigos
+        Quando preencho os campos de nome e telefone do amigo
+        E clico em "Cadastrar"
+        Então o amigo é adicionado com sucesso.
+    </p>
+    
+    <p>
+        Cenário 2: Criação de um novo amigo campos obrigatórios não preenchidos:
+        Dado que estou na tela de cadastro de amigos
+        Quando deixo algum dos campos obrigatórios em branco
+        E clico em "Cadastrar"
+        Então uma mensagem de erro é exibida informando que os campos obrigatórios devem ser preenchidos.
+    </p>
+</section>
+
+
+<h3>3 - EMPRÉSTIMOS</h3>
+<section>
+    <p>
+        Cenário 1: Registro de empréstimo de ferramenta a um amigo, ferramenta disponível:
+        Dado que estou na tela de registro de empréstimo
+        E seleciono uma ferramenta disponível
+        E seleciono um amigo cadastrado
+        E informo as datas de empréstimo e devolução
+        E clico em "Registrar Empréstimo"
+        Então o empréstimo é registrado com sucesso.
+    </p>
+    
+    <p>
+        Cenário 2: Registro de empréstimo de ferramenta a um amigo, ferramenta não disponível
+        Dado que estou na tela de registro de empréstimo
+        E a ferramenta que desejo emprestar não está disponível (por exemplo, já está emprestada a outro amigo)
+        Quando seleciono a ferramenta indisponível
+        E seleciono um amigo cadastrado
+        E informo as datas de empréstimo e devolução
+        E clico em "Registrar Empréstimo"
+        Então uma mensagem de erro é exibida informando que a ferramenta não está disponível para empréstimo.
+    </p>
+</section>
+
+
+<h3>4 - VALOR GASTO/INVESTIMENTO</h3>
+<section>
+    <p>
+        Cenário 1: Visualização do valor total gastos/investimento em ferramentas:
+        Dado que estou na tela de relatório de ferramentas
+        Quando acesso o relatório
+        E clico em "Valor total gasto nas ferramentas"
+        Então vejo o valor total gasto em todas as ferramentas cadastradas.
+    </p>
+    
+    
+    <p>
+        Cenário 2: Visualização do valor total gastos/investimento em ferramentas:
+        Dado que estou na tela de relatório de ferramentas
+        E não existem ferramentas cadastradas no sistema
+        Quando acesso o relatório
+        E clico em "Valor total gasto nas ferramentas"
+        Então uma mensagem de erro é exibida informando que não há ferramentas cadastradas
+        E o valor total gasto em aquisições deve ser zero
+    </p>
+</section>
+
+
+<h3>5 - EMPRÉSTIMOS ATIVOS E TODOS REALIZADOS</h3>
+<section>
+    <p>
+        Cenário 1: Visualização de empréstimos ativos e todos realizados:
+        Dado que estou na tela de relatório de empréstimos
+        E acesso o relatório de empréstimos ativos
+        Então vejo a lista de todos os empréstimos em andamento, incluindo as ferramentas emprestadas, amigos envolvidos e datas de empréstimo e devolução.
+    </p>
+    
+    
+    <p>
+        Cenário 2: Visualização de empréstimos ativos e todos realizados:
+        Dado que estou na tela de relatório de empréstimos
+        E acesso o relatório de todos os empréstimos realizados
+        Então vejo a lista de todos os empréstimos realizados, amigos que realizaram o maior número de empréstimos e ferramentas nunca devolvidas.
+    </p>
+</section>
+
+
+<h3>6 - AGENDA GOOGLE</h3>
+<section>
+    <p>
+        Cenário 1: Novo evento no Google agenda
+        Dado que crio um novo evento no software
+        Quando ele seleciona um amigo da lista de cadastro
+        Então o software deve criar um convite no Google Agenda para esse amigo
+        E o amigo deve receber uma notificação por e-mail sobre o convite.
+    </p>
+    
+    
+    <p>
+        Cenário 2: Evento no Google agenda
+        Dado que possui eventos registrados no Google Agenda
+        Quando o horário de um evento se aproxima
+        Então o dono e os amigos devem receber um lembrete por e-mail sobre o evento
+        E o lembrete deve incluir detalhes do evento, como título, data, hora e local.
+    </p>
+</section>
+
+
+    </main>
+
+<footer>
+    <p>
+        Criado por <a href="https://github.com/Gwin14" target="_blank" rel="noopener noreferrer">Fábio Dos Santos</a>
+    </p>
+</footer>
 
 </body>
 </html>
